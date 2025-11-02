@@ -22,10 +22,10 @@ const transporter = createTransport({
     },
 });
 
-app.get('/', async () => {
+app.get('/', async (req, res) => {
     try {
-        const res = await axios.get(process.env.BACKEND_URL);
-        const users = res.data.users;
+        const response = await axios.get(process.env.BACKEND_URL);
+        const users = response.data.users;
 
         // console.log(users);
 
