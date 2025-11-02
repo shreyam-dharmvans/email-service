@@ -79,12 +79,15 @@ app.get('/', async () => {
             });
 
             // console.log("all mails sent");
+
+            return res.status(200).json({ message: "Daily progress emails sent successfully." });
         }
 
         console.log("Daily progress emails sent successfully.");
 
     } catch (err) {
         console.error("Error sending daily progress emails:", err);
+        return res.status(500).json({ message: "Error sending daily progress emails.", error: err });
     }
 });
 
