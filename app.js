@@ -22,7 +22,7 @@ const transporter = createTransport({
     },
 });
 
-cron.schedule('46 0 * * *', async () => {
+app.get('/', async () => {
     try {
         const res = await axios.get(process.env.BACKEND_URL);
         const users = res.data.users;
@@ -62,7 +62,7 @@ cron.schedule('46 0 * * *', async () => {
                 }
             }
 
-            console.log("traversed all topics", user);
+            // console.log("traversed all topics", user);
 
 
             await transporter.sendMail({
