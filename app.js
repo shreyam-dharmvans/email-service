@@ -22,7 +22,7 @@ const transporter = createTransport({
     },
 });
 
-cron.schedule('0 9 * * *', async () => {
+cron.schedule('46 0 * * *', async () => {
     try {
         const res = await axios.get(process.env.BACKEND_URL);
         const users = res.data.users;
