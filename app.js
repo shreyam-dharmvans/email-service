@@ -30,7 +30,7 @@ app.get('/', async () => {
         // console.log(users);
 
         for (const user of users) {
-            console.log(user);
+            // console.log(user);
             let totalTopics = 0;
             let completedTopics = 0;
             let remainingTopics = 0;
